@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="reset(1).css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./f.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>MAJOLICA</title>
+</head>
+<body>
+    <DIV id="login">
+        <div>
+        <H2>Log in,<span>be one of majolica's family</span></H2>
+        <p class="errors" id="error">all inputs are required</p>
+        <P class="color">NAME</P>
+            <input id="name" 
+            type="text" 
+            placeholder="enter your name" 
+            value="">
+            <p class="errors" id="nameError">your name must have charchters only</p>
+        <p class="color">Email</p>
+            <input  id="email"
+            type="text" 
+            placeholder="enter your email" 
+            value="">
+            <p class="errors" id="emailError">this email is not valid</p>
+        <P class="color">password</P>
+            <input id="password"
+            type="text" 
+            placeholder="enter your password" 
+            value="">
+            <p class="errors" id="passwordError"> password must includes 8 or more charchters</p>
+        <P class="color" >confirm password</P>
+            <input id="confirmPassword"
+            type="text" 
+            placeholder="enter your password again" 
+            value="">
+            <p class="errors" id="confirmError">password not matched</p>
+            <button onclick="webSite()" id="button">log in</button>
+        </div>
+    </DIV>
+    <!-- style="display: none;" -->
+    <div id="navbar" class="navbar" style="display: none;">
+        <img src="./2.jpg" alt="logo">
+        <a onclick="backToMain()">home</a>
+        <a onclick="goToAbout()">about us</a>
+        <a onclick="showChoosenProducts()" >cart <span id="count">(0)</span> </a href="./f.html">
+            <p>hello,<span id="userName"></span></p>
+        <button onclick="logOut()">log out</button>
+    </div>
+    <div id="website" style="display: none;"> 
+        
+        <div id="intro">
+            <div id="descreption">
+                <h1>welcome in majolica store</h1>
+                <h3>
+                    new member, new story
+                </h3>
+                          
+            </div>
+        </div>
+       
+        <div id="productsSection">
+            <div><h1>our products</h1></div>
+            <div><select name="catigory" id="whichP" onchange="showProductsByCategory()">
+                <option value="all">all</option>
+                <option value="mugs">mugs</option>
+                <option value="plates">plates</option>
+                <option value="vase">vase</option>
+            </select></div>
+            <div id="products">
+                <div id="mug1" class="mugs product">
+                    <img src="./mug1.JPG" alt="">
+                    <p class="proName">cracky mug</p>
+                    <p class="price">price : 250 LE</p>
+                    <button onclick="addToCart('mug1')">add</button>
+                </div>
+                <div id="mug2" class="mugs product">
+                    <img src="./mug2.JPG" alt="">
+                    <p class="proName">reduction mug</p>
+                    <p class="price">price : 250 LE</p>
+                    <button onclick="addToCart('mug2')">add</button>
+                </div>
+                <div id="mug3" class="mugs product">
+                    <img src="./mug3.JPG" alt="">
+                    <p class="proName">vintage mug</p>
+                    <p class="price">price : 250 LE</p>
+                    <button onclick="addToCart('mug3')">add</button>
+                </div>
+                <div id="plate1" class="plates product">
+                    <img src="./plate 15.JPG" alt="">
+                    <p class="proName">reduction plate</p>
+                    <p class="price">price : 450 LE</p>
+                    <button onclick="addToCart('plate1')">add</button>
+                </div>
+                <div id="plate2" class="plates product">
+                    <img src="./plate 2.JPG" alt="">
+                    <p class="proName">sea plate</p>
+                    <p class="price">price : 450 LE</p>
+                    <button onclick="addToCart('plate2')">add</button>
+                </div>
+                <div id="plate3" class="plates product">
+                    <img src="./plate 3.JPG" alt="">
+                    <p class="proName">wide plate</p>
+                    <p class="price">price : 550 LE</p>
+                    <button onclick="addToCart('plate3')">add</button>
+                </div>
+                <div id="plate4" class="plates product">
+                    <img src="./plate4.JPG" alt="">
+                    <p class="proName">crystal plate</p>
+                    <p class="price">price : 550 LE</p>
+                    <button onclick="addToCart('plate4')">add</button>
+                </div>
+                <div id="vase1" class="vase product">
+                    <img src="./vase1.JPG" alt="">
+                    <p class="proName">reduction vase</p>
+                    <p class="proName">size 2</p>
+                    <p class="price">price : 950 LE</p>
+                    <button onclick="addToCart('vase1')">add</button>
+                </div>
+                <div id="vase2" class="vase product">
+                    <img src="./vase2.JPG" alt="">
+                    <p class="proName">reduction vase</p>
+                    <p class="proName">size 1</p>
+                    <p class="price">price : 750 LE</p>
+                    <button onclick="addToCart('vase2')">add</button>
+                </div>
+                <div id="vase3" class="vase product">
+                    <img src="./vase3.JPG" alt="">
+                    <p class="proName">reduction vase</p>
+                    <p class="proName">size 3</p>
+                    <p class="price">price : 1250 LE</p>
+                    <button onclick="addToCart('vase3')">add</button>
+                </div>
+            </div>
+        </div>
+        <div id="bestseller">
+            <h1>bestsellers</h1>
+            <div id="slider">
+                <img id="image" src="./4.jpeg" alt="">
+            <div id="buttons">
+                <button onclick="goBack()"><</button>
+                <button onclick="goForward()">></button>
+            </div>
+            <button onclick="goToTop()">go Top again?</button>
+            </div>
+        </div>
+    </div>
+    <div id="about" style="display: none;">
+        <h3>
+            Hand-Crafted Ceramic Tableware.
+        </h3>
+        <h4>-all of our products are microwave and dishwasher safe.</h4>
+        <h5>-Since 2021</h5>
+        <h5>📍Cairo, Egypt</h5> 
+    </div>
+    <div id="footer" style="display: none;">
+        <span>© 2024</span> 
+        <div>
+        <a href="https://www.facebook.com/majolicaceramics2021/"><i  class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/majolica.ceramics/?igsh=b3U3bWl3NXJ5NzY2"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+    <div id="cart" style="display: none;">
+
+        <p id="totalCost"></p>
+    </div>
+    <script src="./f.js"></script>
+</body>
+</html>
